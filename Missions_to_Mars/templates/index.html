@@ -22,10 +22,16 @@
 
     <!-- mars_info -->
     {% if mars_info %}
-    <div class="row" id="craiglist-listings">
+    <div class="row" id="headline">
       <div class="col-md-12">
         <h4 class="heading">{{mars_info.news_title}}</h4>
         <small>{{mars_info.news_p}}</small>
+        <h4>Featured Image</h3>
+            <div class="image">
+                <a href="{{mars_info.featured_image_url}}">
+                    <img alt="featured_image" src="{{mars_info.featured_image_url}}">
+                </a>
+            </div>
       </div>
     </div>
   </div>
