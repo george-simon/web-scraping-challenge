@@ -16,6 +16,7 @@ def scrape():
     browser = init_browser()
     mars_info = {}
 
+    #title headline
     url = "https://mars.nasa.gov/news/"
     browser.visit(url)
 
@@ -28,7 +29,26 @@ def scrape():
     mars_info["news_title"] = news_title.strip()
     mars_info["news_p"] = news_p.strip()
 
-    # mars_info["price"] = soup.find("span", class_="result-price").get_text()
+    #featured image
+    url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
+    browser.visit(url)
+
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    # scrap featured image
+    div_style = soup.find(class_="carousel_item")['style']
+    style = cssutils.parseStyle(div_style)
+    image_url = style['background-image']
+
+    #Cut of the '()' and 'url'
+    image_url = image_url.replace('url(', '').replace(')', '')
+
+    #added https://www.jpl.nasa.gov to url collected string
+    featured_image_url = print(f"https://www.jpl.nasa.gov{image_url}")
+    mars_info["featured_image_url"] = featured_image_url
+
+    
     # mars_info["hood"] = soup.find("span", class_="result-hood").get_text()
 
     return mars_info
