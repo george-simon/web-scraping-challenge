@@ -1,0 +1,16 @@
+.row > .col-md-12 > .image {
+    /* min-height: 50px;
+    padding: 5px;
+    margin: 5px;
+    max-width: 100px;
+    width:100%; */
+    vertical-align: middle;
+    border-style: none;
+    max-width: 80%;
+  }
+
+/* #featured {
+    vertical-align: middle;
+    border-style: none;
+    max-width: 80%;
+} */
