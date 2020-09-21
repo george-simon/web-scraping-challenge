@@ -1,11 +1,11 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_pymongo import PyMongo
-import scrape_craigslist
+import scrape_mars
 
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/craigslist_app"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db"
 mongo = PyMongo(app)
 
 # Or set inline
@@ -14,15 +14,15 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    listings = mongo.db.listings.find_one()
-    return render_template("index.html", listings=listings)
+    mars_info = mongo.db.mars_info.find_one()
+    return render_template("index.html", mars_info=mars_info)
 
 
 @app.route("/scrape")
 def scraper():
-    listings = mongo.db.listings
-    listings_data = scrape_craigslist.scrape()
-    listings.update({}, listings_data, upsert=True)
+    mars_info = mongo.db.mars_info
+    mars_info_data = scrape_mars.scrape()
+    mars_info.update({}, mars_info_data, upsert=True)
     return redirect(url_for('index'), code=302)
 
 

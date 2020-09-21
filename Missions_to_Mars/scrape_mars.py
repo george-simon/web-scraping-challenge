@@ -14,17 +14,22 @@ def init_browser():
 
 def scrape():
     browser = init_browser()
-    listings = {}
+    mars_info = {}
 
-    url = "https://raleigh.craigslist.org/search/hhh?max_price=1500&availabilityMode=0"
+    url = "https://mars.nasa.gov/news/"
     browser.visit(url)
 
-    html = browser.html
-    soup = BeautifulSoup(html, "html.parser")
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
 
-    listings["headline"] = soup.find("a", class_="result-title").get_text()
-    listings["price"] = soup.find("span", class_="result-price").get_text()
-    listings["hood"] = soup.find("span", class_="result-hood").get_text()
+    # scrap the news title and paragraph
+    news_title = soup.find('div', class_='content_title').text
+    news_p = soup.find('div', class_='rollover_description_inner').text
+    mars_info["news_title"] = news_title.strip()
+    mars_info["news_p"] = news_p.strip()
 
-    return listings
+    # mars_info["price"] = soup.find("span", class_="result-price").get_text()
+    # mars_info["hood"] = soup.find("span", class_="result-hood").get_text()
+
+    return mars_info
  

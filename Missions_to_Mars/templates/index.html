@@ -18,16 +18,23 @@
     </div>
 
     <!-- mars_info -->
-    {% if listings %}
+    {% if mars_info %}
     <div class="row" id="craiglist-listings">
       <div class="col-md-12">
-        <h4 class="heading">{{mars_info.price}} {{mars_info.headline}}</h4>
-        <small>{{mars_info.hood}}</small>
+        <h4 class="heading">{{mars_info.news_title}}</h4>
+        <small>{{mars_info.news_p}}</small>
       </div>
     </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+      </div>
+    </div>
+  </div>
     {% endif %}
 
-  </div>
+  
 </body>
 
 </html>
