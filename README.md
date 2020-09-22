@@ -36,5 +36,6 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 ### Application Launch
 Below is a screen shot of the final application in action.
 * The **BUTTON** *Scrape New Data* pulls in the updates from the webpages outlined above. 
-    * Wasn't able to successfull scrape the four pictures. 
-![Final_App_Pic](final_application_screenshot.png)
+    * Wasn't able to successfull scrape the four pictures.
+    
+![Final_App_Pic](/final_application_screenshot.png)
