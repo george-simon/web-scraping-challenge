@@ -34,4 +34,7 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 * Create a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Make sure your template will display a page even if the data is empty. Use the following as a guide for what the final product should look like, but feel free to create your own design.
 
 ### Application Launch
+Below is a screen shot of the final application in action.
+* The *BUTTON* **Scrape New Data** pulls in the updates from the webpages outlined above. 
+    * Wasn't able to successfull scrape the four pictures. 
 ![Final_App_Pic](/final_application_screenshot.png)
