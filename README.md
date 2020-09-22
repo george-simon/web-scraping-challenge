@@ -3,6 +3,7 @@
 ### Background
 In this challenge I was assigned to build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following is the challenge objectives.
 
+
 ### Part I - Web Scraping
 Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
 
@@ -18,8 +19,11 @@ Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, an
 #### Mars Facts
 * Visit the [USGS Astrogeology site](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars) to obtain high resolution images for each of Mar's hemispheres.
 * You will need to click each of the links to the hemispheres in order to find the image url to the full resolution image.
+
+#### Mars Hemispheres
 * Save both the image url string for the full resolution hemisphere image, and the Hemisphere title containing the hemisphere name. Use a Python dictionary to store the data using the keys img_url and title.
 * Append the dictionary with the image url string and the hemisphere title to a list. This list will contain one dictionary for each hemisphere.
+
 
 ### Part II - MongoDB and Flask Application
 Use MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
