@@ -48,8 +48,22 @@ def scrape():
     # featured_image_url = print(f"https://www.jpl.nasa.gov{image_url}")
     mars_info["featured_image_url"] = f"https://www.jpl.nasa.gov{image_url}"
 
+    #finding titles of hemispheres
+    url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
+    browser.visit(url)
 
-    # mars_info["hood"] = soup.find("span", class_="result-hood").get_text()
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    #scrap titles of hemispheres
+    title_list = []
+    for i in range(0,4):
+        title_dic = {}
+        title = browser.find_by_css('h3')[i].text
+        title_dic['title'] = title
+        title_list.append(title_dic)
+    
+    mars_info["hemi_titles"] = title_list
 
     return mars_info
  
