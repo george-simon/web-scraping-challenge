@@ -1,4 +1,4 @@
-.row > .col-md-12 > .image {
+img {
     /* min-height: 50px;
     padding: 5px;
     margin: 5px;
@@ -6,11 +6,11 @@
     width:100%; */
     vertical-align: middle;
     border-style: none;
-    max-width: 80%;
+    max-width: 50%;
+    height: auto;
   }
 
-/* #featured {
-    vertical-align: middle;
-    border-style: none;
-    max-width: 80%;
-} */
+img.resize {
+  width:540px; /* you can use % */
+  height: auto;
+}

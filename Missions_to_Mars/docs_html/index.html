@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    img {max-width: 50%;
+    height: auto;
+    vertical-align: middle;}
+  </style>
 </head>
 
 <body>
@@ -27,10 +32,9 @@
         <h4 class="heading">{{mars_info.news_title}}</h4>
         <small>{{mars_info.news_p}}</small>
         <h4>Featured Image</h3>
-            <div class="image" id="featured">
-                <a href="{{mars_info.featured_image_url}}">
+            <div class="image">
+                <!-- <a href="{{mars_info.featured_image_url}}"></a> -->
                     <img alt="featured_image" src="{{mars_info.featured_image_url}}">
-                </a>
             </div>
       </div>
     </div>
