@@ -32,3 +32,6 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
     * Store the return value in Mongo as a Python dictionary.
 * Create a root route / that will query your Mongo database and pass the mars data into an HTML template to display the data.
 * Create a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Make sure your template will display a page even if the data is empty. Use the following as a guide for what the final product should look like, but feel free to create your own design.
+
+### Application Launch
+![Final_App_Pic](/final_application_screenshot.png)
