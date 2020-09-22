@@ -38,4 +38,4 @@ Below is a screen shot of the final application in action.
 * The **BUTTON** *Scrape New Data* pulls in the updates from the webpages outlined above. 
     * Wasn't able to successfull scrape the four pictures.
     
-![Final_App_Pic](/final_application_screenshot.png)
+![Final App Pic](/final_application_screenshot.PNG)
